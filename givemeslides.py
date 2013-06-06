@@ -26,8 +26,6 @@ def main():
         print "Please check %s" % args.file
         sys.exit(1)
 
-    print markdown(contents)
-    print "======================"
     import xml.etree.ElementTree as ET
     root = ET.fromstring("<root>%s</root>" %markdown(contents))
     html = ET.Element("section")
@@ -35,24 +33,20 @@ def main():
     #import pdb
     #pdb.set_trace()
 
-    start = False
-    end = False
+    h1 = root.find('h1')
+    root.remove(h1)
+
+    element = None
     for child in root:
-        if child.tag == 'h3' and not start:
+        if child.tag == 'h3':
             element = ET.Element("article")
             html.append(element)
-            start = True
-        elif child.tag == 'h3' and start:
-            start = False
-        if start:
+        if element is not None:
             element.append(child)
-
-    print ET.tostring(html, method="html")
-
 
     try:
         f = open('test.html', 'w')
-        f.write(html)
+        f.write(ET.tostring(html, method="html"))
         f.close()
     except Exception, e:
         #print "Something wrong, %s" % e

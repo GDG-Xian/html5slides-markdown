@@ -556,7 +556,7 @@ function addGeneralStyle() {
   var el = document.createElement('link');
   el.rel = 'stylesheet';
   el.type = 'text/css';
-  el.href = 'html5styles.css';
+  el.href = 'default.css';
   document.body.appendChild(el);
 
   var el = document.createElement('meta');

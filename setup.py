@@ -3,7 +3,8 @@ from setuptools import setup
 
 setup(name='html5slides-markdown',
       version='1.0',
-      description='test',
+      description="It's a tool to convert markdown file into slides file",
+      url='https://github.com/GDG-Xian/html5slides-markdown',
       author='David Xie',
       author_email='david.scriptfan@gmail.com',
       packages=['html5slides'],

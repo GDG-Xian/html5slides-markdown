@@ -41,6 +41,24 @@ html5slides-markdown的安装非常简单, 跟普通的python包安装没有任�
 
 -------------------------------
 
+### 我需要一个例子
+
+还是给我一个例子吧, 让我更清楚markdown怎么写
+
+Markdown file: [example.md](https://raw.github.com/GDG-Xian/html5slides-markdown/master/example.md)
+
+渲染后的结果: [example.html](http://gdg-xian.github.io/html5slides-markdown/example.html#1)
+
+-------------------------------
+
+### 我写好了markdown文本了, 下一步呢?
+
+    givemeslides my.md > my.html
+
+可以了, my.html就是你要的slides了, 用浏览器打开它吧!
+
+--------------------------------
+
 ### 行动吧!
 
 怎么样, 够简单, 够酷吧!

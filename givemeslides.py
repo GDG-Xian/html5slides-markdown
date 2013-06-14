@@ -16,13 +16,9 @@ def prepare():
                     help="theme to use, if not provided, default theme will be used",
                     type=str,
                     action="store")
-
-
-def create_head_elem(title, soup):
-    head = Tag(soup, 'head')
-    head.append(Tag("title"))
-    head.insert(Tag("script"))
-    return head
+    parser.add_argument("--offline",
+                    help="If you use this flag, you can get offline js files and css files",
+                    action="store_true")
 
 
 def main():
@@ -47,12 +43,27 @@ def main():
     title.setString(args.file)
     head.append(title)
 
+    link = Tag(hsoup, 'link')
+    link['rel'] = 'stylesheet'
+    link['type'] = 'text/css'
+    if args.offline:
+        link['href'] = 'default.css'
+    else:
+        link['href'] = 'https://raw.github.com/GDG-Xian/html5slides-markdown/master/themes/default.css'
+    head.append(link)
+
     script1 = Tag(hsoup, 'script')
-    script1['src'] = 'html5slides.js'
+    if args.offline:
+        script1['src'] = 'html5slides.js'
+    else:
+        script1['src'] = 'https://raw.github.com/GDG-Xian/html5slides-markdown/master/resources/html5slides.js'
     head.append(script1)
-    script2 = Tag(hsoup, 'script')
-    script2['src'] = 'prettify.js'
-    head.append(script2)
+    # script2 = Tag(hsoup, 'script')
+    # if args.offline:
+    #     script2['src'] = 'prettify.js'
+    # else:
+    #     script2['src'] = 'https://raw.github.com/GDG-Xian/html5slides-markdown/master/resources/prettify.js'
+    # head.append(script2)
     html.append(head)
 
     body = Tag(hsoup, 'body')
@@ -74,7 +85,7 @@ def main():
 
     html.append(body)
 
-    print html
+    print "<!DOCTYPE html>\n\n%s" % html
 
 
 if __name__ == '__main__':

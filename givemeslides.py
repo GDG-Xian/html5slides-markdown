@@ -3,7 +3,7 @@
 import sys
 import argparse
 parser = argparse.ArgumentParser()
-from html5slides import get_html_element
+from html5slides import get_slides
 
 
 def prepare():
@@ -23,8 +23,7 @@ def prepare():
 def main():
     prepare()
     args = parser.parse_args()
-    html = get_html_element(args)
-    print "<!DOCTYPE html>\n\n%s" % html
+    print get_slides(args)
 
 
 if __name__ == '__main__':

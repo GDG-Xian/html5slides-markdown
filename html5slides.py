@@ -14,7 +14,7 @@ def get_file_contents(filename):
     return contents
 
 
-def get_html_element(args):
+def get_slides(args):
     contents = get_file_contents(args.file)
     soup = BeautifulSoup(markdown(contents))
 
@@ -63,4 +63,8 @@ def get_html_element(args):
 
     html.append(body)
 
-    return html
+    return prettify(html)
+
+
+def prettify(html):
+    return "<!DOCTYPE html>\n\n%s" % html

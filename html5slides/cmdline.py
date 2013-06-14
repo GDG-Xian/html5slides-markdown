@@ -1,9 +1,8 @@
-#!/usr/bin/env python
 #-*-coding:utf-8-*-
 import sys
 import argparse
 parser = argparse.ArgumentParser()
-from html5slides import get_slides
+from functions import get_slides
 
 
 def prepare():

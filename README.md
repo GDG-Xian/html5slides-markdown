@@ -19,3 +19,7 @@ That's it!
 2. Remember, '---' is the signal for a new slide
 3. Run `givemeslides <markdown file name> > <slides name>.html` to generate slides file
 4. That's it. You got a .html file now, view it with your favourite browser, not IE. LOL, have fun!
+
+### Example
+
+[example.md](https://github.com/GDG-Xian/html5slides-markdown/blob/master/example.md)

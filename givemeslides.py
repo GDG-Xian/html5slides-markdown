@@ -52,18 +52,12 @@ def main():
         link['href'] = 'http://gdg-xian.github.io/html5slides-markdown/themes/default.css'
     head.append(link)
 
-    script1 = Tag(hsoup, 'script')
+    script = Tag(hsoup, 'script')
     if args.offline:
-        script1['src'] = 'html5slides.js'
+        script['src'] = 'html5slides.js'
     else:
-        script1['src'] = 'http://gdg-xian.github.io/html5slides-markdown/javascripts/html5slides.js'
-    head.append(script1)
-    # script2 = Tag(hsoup, 'script')
-    # if args.offline:
-    #     script2['src'] = 'prettify.js'
-    # else:
-    #     script2['src'] = 'https://raw.github.com/GDG-Xian/html5slides-markdown/master/resources/prettify.js'
-    # head.append(script2)
+        script['src'] = 'http://gdg-xian.github.io/html5slides-markdown/javascripts/html5slides.js'
+    head.append(script)
     html.append(head)
 
     body = Tag(hsoup, 'body')

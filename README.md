@@ -5,7 +5,7 @@ It's based on Google's html5slides project, we add markdown support for it.
 
 ### What is Google's html5slides project?
 
-Please visit \[http://code.google.com/p/html5slides/](http://code.google.com/p/html5slides/) to get more info about this project.
+Please visit [http://code.google.com/p/html5slides/](http://code.google.com/p/html5slides/) to get more info about this project.
 
 ### Installation
 

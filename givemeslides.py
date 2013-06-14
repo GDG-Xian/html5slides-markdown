@@ -49,14 +49,14 @@ def main():
     if args.offline:
         link['href'] = 'default.css'
     else:
-        link['href'] = 'https://raw.github.com/GDG-Xian/html5slides-markdown/master/themes/default.css'
+        link['href'] = 'http://gdg-xian.github.io/html5slides-markdown/themes/default.css'
     head.append(link)
 
     script1 = Tag(hsoup, 'script')
     if args.offline:
         script1['src'] = 'html5slides.js'
     else:
-        script1['src'] = 'https://raw.github.com/GDG-Xian/html5slides-markdown/master/resources/html5slides.js'
+        script1['src'] = 'http://gdg-xian.github.io/html5slides-markdown/javascripts/html5slides.js'
     head.append(script1)
     # script2 = Tag(hsoup, 'script')
     # if args.offline:

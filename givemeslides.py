@@ -44,9 +44,7 @@ def main():
 
     head = Tag(hsoup, 'head')
     title = Tag(hsoup, 'title')
-    h1 = soup.find('h1')
-    title.setString(h1.text)
-    h1.extract()
+    title.setString(args.file)
     head.append(title)
 
     script1 = Tag(hsoup, 'script')
@@ -58,19 +56,25 @@ def main():
     html.append(head)
 
     body = Tag(hsoup, 'body')
-    for h3 in soup.findAll('h3'):
-        tag = Tag(hsoup, "article")
-        body.append(tag)
-        tag.append(h3)
+    body['style'] = 'display:none'
+    section = Tag(hsoup, 'section')
+    section['class'] = 'slides layout-regular template-default'
+    body.append(section)
+    elements = []
+    elements.append(soup.first())
+    elements.extend(soup.first().findNextSiblings())
+    article = Tag(hsoup, 'article')
+    section.append(article)
+    for element in elements:
+        if element.name == 'hr':
+            article = Tag(hsoup, 'article')
+            section.append(article)
+        else:
+            article.append(element)
+
     html.append(body)
 
-    try:
-        f = open('test.html', 'w')
-        f.write(html.prettify())
-        f.close()
-    except Exception, e:
-        #print "Something wrong, %s" % e
-        sys.exit(1)
+    print html
 
 
 if __name__ == '__main__':

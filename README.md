@@ -22,4 +22,5 @@ That's it!
 
 ### Example
 
-[example.md](https://raw.github.com/GDG-Xian/html5slides-markdown/master/example.md)
+Markdown file: [example.md](https://raw.github.com/GDG-Xian/html5slides-markdown/master/example.md)
+Slides: [example.html](http://gdg-xian.github.io/html5slides-markdown/example.html#1)

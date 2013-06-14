@@ -22,4 +22,4 @@ That's it!
 
 ### Example
 
-[example.md](https://github.com/GDG-Xian/html5slides-markdown/blob/master/example.md)
+[example.md](https://raw.github.com/GDG-Xian/html5slides-markdown/master/example.md)
